@@ -12,28 +12,7 @@ namespace Lab9
     {
         public static void Main()
         {
-
-            String input = Console.ReadLine();
-            List<string> studentHobbies = new List<string>();
-            studentHobbies.Add(new string ((char)0, 100));
-            String inputNewUser = Console.ReadLine();
-            studentHobbies.Add(inputNewUser);
-            foreach (string user in studentHobbies)
-            {
-                Console.WriteLine(studentHobbies);
-
-            }
-            //class studentHobbies
-            //{
-            //    int _a;
-            //    int _b;
-            //    public string(string )
-            //    {
-            //        _string = _string;
-              
-            //    }
-            //}
-            // takes string input parses to an in which is an index value and prints the name of student at that value
+            
             List<string> studentNames = new List<string>(); //0-15 values
                                                             //methods (Add method) to start building chain of links of a list
             studentNames.Add(""); //first link of chain
@@ -93,27 +72,11 @@ namespace Lab9
             favFood.Add("garlic bread");
 
 
-           
-            //List<string> studentHobbies = new List<string>();
-            //studentHobbies.Add("");
-            //studentHobbies.Add("Running");
-            //studentHobbies.Add("Reading");
-            //studentHobbies.Add("Wearing cool shirts");
-            //studentHobbies.Add("Playing video games");
-            //studentHobbies.Add("Memes");
-            //studentHobbies.Add("Growing his business");
-            //studentHobbies.Add("handstands");
-            //studentHobbies.Add("stepping");
-            //studentHobbies.Add("shopping");
-            //studentHobbies.Add("juggling");
-            //studentHobbies.Add("stepping");
-            //studentHobbies.Add("cosplay");
-            //studentHobbies.Add("going to the gym");
-            //studentHobbies.Add("playing guitar");
-            //studentHobbies.Add("playing basketball");
-            //studentHobbies.Add("playing a show with his band");
-            
-            int stuNumber;
+
+            List<string> studentHobbies = new List<string>();
+            string createStudentHobbies = "h";
+
+            int stuNumber = 0;
             // string regex = @"^\d[1 - 20]$";
             string homeFoodHobby = "";
             string userResponse;
@@ -128,7 +91,7 @@ namespace Lab9
                         Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number from 0-20)");
                         stuNumber = int.Parse(Console.ReadLine()); // takes in answer converts to number
 
-
+                        firstLoop = false;
                     }
                     catch (Exception ex)
                     {
@@ -136,6 +99,7 @@ namespace Lab9
                         {
                             //WebId = Guid.Empty;
                             Console.WriteLine("Sorry! Only numbers allowed. Please enter a number 0-20.");
+
                         }
                         //throw; // if doesn't hit catch, moves out to the next while/bool
                     }
@@ -188,7 +152,8 @@ namespace Lab9
                         userResponse = Console.ReadLine();
                     }
                 }
-                Console.WriteLine("Would you like more information on " + studentNames[stuNumber] + "or another student? To learn more enter \"y\" to exit \"n\"");
+                Console.WriteLine("Would you like more information on " + studentNames[stuNumber] + " enter \"y\" to exit \"n\"");
+                //Console.WriteLine("Would you like more information on " + studentNames[stuNumber] + " or another student? To learn more enter \"y\" to exit \"n\"");
                 userResponse = Console.ReadLine();
                 //run code as long as the user says y; break when n
             }
