@@ -12,29 +12,6 @@ namespace Lab9
     {
         public static void Main(string[] args)
         {
-
-            // takes string input parses to an in which is an index value and prints the name of student at that value
-            // initializing array
-            //string[] studentName = { Jesse", "Chris", "Zac", "Schwartz", "Ash", "Terrell", "Samantha", "Demarko", "Terri", "Patrick", "Drew", "Kristen", "BJ", "Will", "Dr. K", "Jacob" };
-
-            /*List<string> csharpClass = new List<string>();
-            csharpClass.Add("0. Jesse"); //first link of chain
-            csharpClass.Add("1. Chris"); //second link of chain
-            csharpClass.Add("2. Zac"); // link of chain
-            csharpClass.Add("4. Schwartz");
-            csharpClass.Add("5. Ash");
-            csharpClass.Add("6. Terrell");
-            csharpClass.Add("7. Samantha");
-            csharpClass.Add("8. Demarko");
-            csharpClass.Add("9. Terri");
-            csharpClass.Add("10. Patrick");
-            csharpClass.Add("11. Drew");
-            csharpClass.Add("12. Kristen");
-            csharpClass.Add("13. BJ");
-            csharpClass.Add("14. Will");
-            csharpClass.Add("15. Dr. K");
-            csharpClass.Add("16. Jacob");*/
-
             // takes string input parses to an in which is an index value and prints the name of student at that value
             List<string> studentNames = new List<string>(); //0-15 values
                                                             //methods (Add method) to start building chain of links of a list
@@ -113,20 +90,32 @@ namespace Lab9
             studentHobbies.Add("playing guitar");
             studentHobbies.Add("playing basketball");
             studentHobbies.Add("playing a show with his band");
-
-            //Console.WriteLine("Student " + {userInput} + " is " + [i] + ". What would you like to know about " + [i] + " ? (enter "hometown" or "favorite food"):");
-
-
+            
             int stuNumber;
-           // string regex = @"^\d[1 - 20]$";
+            // string regex = @"^\d[1 - 20]$";
             string homeFoodHobby = "";
             string userResponse;
 
             do
             {
-                //shows student option numbers
-                Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number from 0-20)");
-                stuNumber = int.Parse(Console.ReadLine()); // takes in number converts
+                try
+                {
+                    //shows student option numbers
+                    Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number from 0-20)");
+                    stuNumber = int.Parse(Console.ReadLine()); // takes in number converts
+                }
+                catch (Exception ex)
+                {
+                    if (ex is FormatException || ex is OverflowException)
+                    {
+                        //WebId = Guid.Empty;
+                        Console.WriteLine("Sorry! Only numbers allowed. Please enter a number 0-20.");
+
+                    }
+
+                    throw;
+                }
+
 
                 bool userValidation = true; // while the condition is true, loop
                 while (userValidation) // validates int if it's in range
@@ -169,13 +158,13 @@ namespace Lab9
                         userValidation = false;
                     }
 
-                    else 
+                    else
                     {
                         Console.WriteLine("Sorry! That data does not exist. Please try again. Enter either \"hometown\", \"favorite food\" or \"hobbies\":");
                         userResponse = Console.ReadLine();
                     }
                 }
-                Console.WriteLine("Do you want to continue? Choose (y/n)");
+                Console.WriteLine("Would you like more information on " + studentNames[stuNumber] + "or another student? To learn more enter \"y\" to exit \"n\"");
                 userResponse = Console.ReadLine();
                 //run code as long as the user says y; break when n
             }
