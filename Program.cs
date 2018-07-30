@@ -147,36 +147,32 @@ namespace Lab9
                 }
                 // reset bool to continue to next loop 
                 userValidation = true;
-                while (homeFoodHobby != "hometown")
+                while (userValidation)
                 {
                     if (homeFoodHobby == "hometown")
                     {
                         Console.WriteLine(studentNames[stuNumber] + " is from " + stuHometown[stuNumber] + ".");
-                        userResponse = Console.ReadLine();
-                        //userResponse = Console.ReadLine();
-                        userValidation = true;
+                        userValidation = false;
                         //need to write for if yes or no
                     }
 
                     else if (homeFoodHobby == "favorite food")
                     {
                         Console.WriteLine(studentNames[stuNumber] + "'s " + "favorite food is " + favFood[stuNumber] + ". ");
-                        userResponse = Console.ReadLine();
-                        userValidation = true;
+                        userValidation = false;
 
                     }
 
                     else if (homeFoodHobby == "hobbies")
                     {
                         Console.WriteLine(studentNames[stuNumber] + "'s " + "hobbie is " + studentHobbies[stuNumber] + ". ");
-                        userResponse = Console.ReadLine();
-                        userValidation = true;
+                        userValidation = false;
                     }
+
                     else 
                     {
                         Console.WriteLine("Sorry! That data does not exist. Please try again. Enter either \"hometown\", \"favorite food\" or \"hobbies\":");
                         userResponse = Console.ReadLine();
-                        userValidation = false;
                     }
                 }
                 Console.WriteLine("Do you want to continue? Choose (y/n)");
