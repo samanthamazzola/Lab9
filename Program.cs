@@ -112,9 +112,9 @@ namespace Lab9
             {
                 while (firstLoop == true)
                 {
-                    try
+                    try // built exceptions for if the user inputs anything but numbers
                     {
-                        //shows student option numbers
+                        //shows student option numbers 
                         Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number from 0-20)");
                         stuNumber = int.Parse(Console.ReadLine()); // takes in answer converts to number
 
@@ -130,7 +130,6 @@ namespace Lab9
                     }
                 }
 
-                stuNumber = 0;
                 bool userValidation = true; // while the condition is true, loop
                 while (userValidation) // validates int if it's in range
                 {
