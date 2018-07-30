@@ -10,19 +10,29 @@ namespace Lab9
 {
     class MainClass
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
 
             String input = Console.ReadLine();
             List<string> studentHobbies = new List<string>();
-            studentHobbies.Add(input);
+            studentHobbies.Add(new string ((char)0, 100));
             String inputNewUser = Console.ReadLine();
             studentHobbies.Add(inputNewUser);
-            foreach (var user in studentHobbies)
+            foreach (string user in studentHobbies)
             {
-                Console.WriteLine(user);
-            }
+                Console.WriteLine(studentHobbies);
 
+            }
+            //class studentHobbies
+            //{
+            //    int _a;
+            //    int _b;
+            //    public string(string )
+            //    {
+            //        _string = _string;
+              
+            //    }
+            //}
             // takes string input parses to an in which is an index value and prints the name of student at that value
             List<string> studentNames = new List<string>(); //0-15 values
                                                             //methods (Add method) to start building chain of links of a list
@@ -117,6 +127,7 @@ namespace Lab9
                         //shows student option numbers 
                         Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number from 0-20)");
                         stuNumber = int.Parse(Console.ReadLine()); // takes in answer converts to number
+
 
                     }
                     catch (Exception ex)
