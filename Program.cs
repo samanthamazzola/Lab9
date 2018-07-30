@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +12,17 @@ namespace Lab9
     {
         public static void Main(string[] args)
         {
+
+            String input = Console.ReadLine();
+            List<string> studentHobbies = new List<string>();
+            studentHobbies.Add(input);
+            String inputNewUser = Console.ReadLine();
+            studentHobbies.Add(inputNewUser);
+            foreach (var user in studentHobbies)
+            {
+                Console.WriteLine(user);
+            }
+
             // takes string input parses to an in which is an index value and prints the name of student at that value
             List<string> studentNames = new List<string>(); //0-15 values
                                                             //methods (Add method) to start building chain of links of a list
@@ -72,51 +83,54 @@ namespace Lab9
             favFood.Add("garlic bread");
 
 
-            List<string> studentHobbies = new List<string>();
-            studentHobbies.Add("");
-            studentHobbies.Add("Running");
-            studentHobbies.Add("Reading");
-            studentHobbies.Add("Wearing cool shirts");
-            studentHobbies.Add("Playing video games");
-            studentHobbies.Add("Memes");
-            studentHobbies.Add("Growing his business");
-            studentHobbies.Add("handstands");
-            studentHobbies.Add("stepping");
-            studentHobbies.Add("shopping");
-            studentHobbies.Add("juggling");
-            studentHobbies.Add("stepping");
-            studentHobbies.Add("cosplay");
-            studentHobbies.Add("going to the gym");
-            studentHobbies.Add("playing guitar");
-            studentHobbies.Add("playing basketball");
-            studentHobbies.Add("playing a show with his band");
+           
+            //List<string> studentHobbies = new List<string>();
+            //studentHobbies.Add("");
+            //studentHobbies.Add("Running");
+            //studentHobbies.Add("Reading");
+            //studentHobbies.Add("Wearing cool shirts");
+            //studentHobbies.Add("Playing video games");
+            //studentHobbies.Add("Memes");
+            //studentHobbies.Add("Growing his business");
+            //studentHobbies.Add("handstands");
+            //studentHobbies.Add("stepping");
+            //studentHobbies.Add("shopping");
+            //studentHobbies.Add("juggling");
+            //studentHobbies.Add("stepping");
+            //studentHobbies.Add("cosplay");
+            //studentHobbies.Add("going to the gym");
+            //studentHobbies.Add("playing guitar");
+            //studentHobbies.Add("playing basketball");
+            //studentHobbies.Add("playing a show with his band");
             
             int stuNumber;
             // string regex = @"^\d[1 - 20]$";
             string homeFoodHobby = "";
             string userResponse;
-
+            bool firstLoop = true;
             do
             {
-                try
+                while (firstLoop == true)
                 {
-                    //shows student option numbers
-                    Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number from 0-20)");
-                    stuNumber = int.Parse(Console.ReadLine()); // takes in number converts
-                }
-                catch (Exception ex)
-                {
-                    if (ex is FormatException || ex is OverflowException)
+                    try
                     {
-                        //WebId = Guid.Empty;
-                        Console.WriteLine("Sorry! Only numbers allowed. Please enter a number 0-20.");
+                        //shows student option numbers
+                        Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number from 0-20)");
+                        stuNumber = int.Parse(Console.ReadLine()); // takes in answer converts to number
 
                     }
-
-                    throw;
+                    catch (Exception ex)
+                    {
+                        if (ex is FormatException || ex is OverflowException)
+                        {
+                            //WebId = Guid.Empty;
+                            Console.WriteLine("Sorry! Only numbers allowed. Please enter a number 0-20.");
+                        }
+                        //throw; // if doesn't hit catch, moves out to the next while/bool
+                    }
                 }
 
-
+                stuNumber = 0;
                 bool userValidation = true; // while the condition is true, loop
                 while (userValidation) // validates int if it's in range
                 {
